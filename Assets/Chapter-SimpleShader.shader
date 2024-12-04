@@ -12,11 +12,15 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader"{
 	SubShader{
 		
 		Pass{
+			//设置渲染状态和标签
+			
+			//开始CG代码片段
 			CGPROGRAM
+			//该代码片段的编译指令
+			#pragma vertex vert //告诉Unity，此函数包含顶点着色器的代码
+			#pragma fragment frag//告诉Unity，此函数包含片元着色器的代码
 
-			#pragma vertex vert
-			#pragma fragment frag
-
+			//CG代码开始
 			//在CG代码中，我们需要定义一个与属性名称和类型匹配的变量
 			fixed4 _Color;
 
