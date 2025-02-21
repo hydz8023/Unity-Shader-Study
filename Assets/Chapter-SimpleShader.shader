@@ -16,6 +16,11 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader"{
 			
 			//开始CG代码片段
 			CGPROGRAM
+
+			//包含文件，类似头文件，Unity中的文件后缀为.cginc
+			#include "UnityCg.cginc"
+			
+
 			//该代码片段的编译指令
 			#pragma vertex vert //告诉Unity，此函数包含顶点着色器的代码
 			#pragma fragment frag//告诉Unity，此函数包含片元着色器的代码
@@ -26,6 +31,8 @@ Shader "Unity Shaders Book/Chapter 5/Simple Shader"{
 
 			//使用一个结构体来定义顶点着色器的输入
 			struct a2v{
+				//格式 Type Name:Semantic
+
 				//POSITION语义告诉Unity，用模型空间的顶点坐标填充vertex变量
 				float4 vertex : POSITION;
 				//NORMAL语义告诉Unity，用模型空间的法线方向填充normal变量
